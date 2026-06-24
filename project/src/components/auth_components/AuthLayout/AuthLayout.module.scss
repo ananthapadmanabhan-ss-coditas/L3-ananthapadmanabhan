@@ -1,0 +1,48 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/shadow" as *;
+@use "../../../styles/fonts" as *;
+
+.container{
+  background-color:$background-tertiary;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: grid;
+  place-items: center;
+}
+.innerContainer{
+  background-color: $background-tertiary;
+  background-image: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)),url("../../../assets/back_ground_Auth.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 90%;
+  width: 96%;
+  display: flex;
+  border-radius: 2rem;
+  background-color: $background-primary;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2rem;
+}
+.sideImage{
+  height: 80%;
+  width: 80%;
+  max-width: 420px;
+  background-image:url("../../../assets/medical-team\ \(1\).png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.formContainer{
+  display: flex;
+  flex-direction: column;
+  border-radius: 2rem;
+  background-color: $background-primary;
+  box-shadow: $shadow-soft;
+  padding: 1rem 1.5rem;
+  h2{
+    text-align: center;
+    font-weight:bolder;
+    color: $primary-active;
+    font-family: $font-family-primary;
+  }
+  height: 80%;
+}
