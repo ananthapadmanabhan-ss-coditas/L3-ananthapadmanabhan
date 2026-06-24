@@ -1,4 +1,5 @@
-@use "../styles/variables" as *;
+@use "./variables" as *;
+@use "./functions" as *;
 
 @mixin flex-center
 {
@@ -38,12 +39,12 @@
 
 @mixin ShiftInputAndLabel {
   position: absolute;
-  left: 10px;
-  top: -10px;
-  font-size: 12px;
+  left: rem(10px);
+  top: rem(-10px);
+  font-size: rem(12px);
   background-color: $input-bg;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: rem(10px);
+  padding-right: rem(10px);
   transition: opacity 0.2s ease;
 }
 

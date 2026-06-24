@@ -9,12 +9,13 @@
 
 .ErrorMessage{
   @extend .Message;
-  background-color: $success-bg;
-  color: $success-color;
+  background-color: $error-bg;
+  color: $error-color;
 }
 
 .SuccessMessage{
   @extend .Message;
-  background-color: $error-bg;
-  color: $error-color;
+  background-color: $success-bg;
+  color: $success-color;
+ 
 }

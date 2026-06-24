@@ -1,29 +1,26 @@
 import { useForm } from "react-hook-form";
-import type { LoginType } from "./LoginForm.types";
-import styles from "./LoginForm.module.scss";
+import styles from "./RegisterForm.module.scss";
 import Input from "../../generic_components/Input/Input";
 import Message from "../../generic_components/Message/Message";
 import Button from "../../generic_components/Button/Button";
 import { Link, useNavigate } from "react-router-dom";
-import { useLoginUserMutation } from "../../../services/authApi/authApi";
+import { useRegisterUserMutation } from "../../../services/authApi/authApi";
+import type { RegisterType } from "./RegisterForm.types";
 
-const LoginForm = () => {
-  const [loginUser, loginState] = useLoginUserMutation();
+const RegisterForm = () => {
+  const [registerUser, registerState] = useRegisterUserMutation();
   const {
     register,
     handleSubmit,
     formState: { errors },
-    getValues,
-  } = useForm<LoginType>();
+  } = useForm<RegisterType>();
   const navigate = useNavigate();
 
-  const onLoginFormSubmit = async () => {
+  const onRegisterFormSubmit = async (data: RegisterType) => {
     try {
-      const email = getValues("email");
-      const password = getValues("password");
-      const data = await loginUser({ email, password }).unwrap();
-      localStorage.setItem("access_token", data.accessToken);
-      localStorage.setItem("refresh_token", data.refreshToken);
+      const response = await registerUser(data).unwrap();
+      localStorage.setItem("access_token", response.accessToken);
+      localStorage.setItem("refresh_token", response.refreshToken);
       navigate("/");
     } catch (error) {
       console.error(error);
@@ -31,7 +28,17 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onLoginFormSubmit)} className={styles.form}>
+    <form onSubmit={handleSubmit(onRegisterFormSubmit)} className={styles.form}>
+      <Input
+        type="name"
+        placeholder="Name"
+        label="Name"
+        {...register("name", {
+          required: "Name field cannot be empty",
+        })}
+      />
+      {errors.name && <Message type="Error" message={errors.name.message} />}
+
       <Input
         type="email"
         placeholder="Email"
@@ -52,6 +59,10 @@ const LoginForm = () => {
         label="Password"
         {...register("password", {
           required: "Password field cannot be empty",
+          minLength: {
+            value: 8,
+            message: "password must contain at least 8 character(s)",
+          },
         })}
       />
       {errors.password && (
@@ -59,23 +70,23 @@ const LoginForm = () => {
       )}
 
       <div>
-        <Button type="submit" disabled={loginState.isLoading}>
-          {loginState.isLoading ? "LOADING..." : "SIGN IN"}
+        <Button type="submit" disabled={registerState.isLoading}>
+          {registerState.isLoading ? "LOADING..." : "SIGN IN"}
         </Button>
       </div>
 
       <div className={styles.Register}>
         <p>
-          First time User? <Link to="/signup">Sign Up</Link>
+          Already Registered? <Link to="/signin">Sign In</Link>
         </p>
       </div>
 
       <div>
-        {loginState.isError && (
+        {registerState.isError && (
           <Message type="Error" message="Request Failed" />
         )}
       </div>
     </form>
   );
 };
-export default LoginForm;
+export default RegisterForm;
