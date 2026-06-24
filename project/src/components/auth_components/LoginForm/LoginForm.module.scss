@@ -1,0 +1,15 @@
+.form{
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.5rem;
+  gap: 1rem;
+  justify-content: space-evenly;
+  div{
+    display: flex;
+    justify-content: center;
+  }
+  .Register{
+    display: flex;
+    justify-content: center;
+  }
+}
