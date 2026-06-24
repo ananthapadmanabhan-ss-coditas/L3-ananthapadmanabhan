@@ -32,13 +32,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: end;
-  gap:0.5rem
 }
 
 .userDiv h3{
   border: none;
   padding: 0.25rem 1.25rem;
-  border-radius: 8px;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
   background-color: $info-bg;
   color: $info-color;
 }

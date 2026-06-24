@@ -12,8 +12,8 @@ const Header=()=>{
         <h1>MEDICARE</h1>
       </div>
       <div className={styles.userDiv}>
-        <h3>{data.email}</h3>
-        <Button>Logout</Button>
+        <h3>{data?.email}</h3>
+        <Button variant='Secondary'>Logout</Button>
       </div>
     </div>
   );

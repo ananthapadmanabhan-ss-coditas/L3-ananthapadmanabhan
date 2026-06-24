@@ -23,13 +23,23 @@
 }
 
 .Primary{
-
+  
 }
 
 .Secondary{
-
+  color: $error-color;
+  background-color: $error-bg;
+  &:hover{
+    background-color: $error-color;
+    color: $error-bg;
+  }
 }
 
 .Tertiary{
-  
+  color:$success-color;
+  background-color: $success-bg;
+  &:hover{
+    background-color: $success-color;
+    color: $success-bg;
+  }
 }
