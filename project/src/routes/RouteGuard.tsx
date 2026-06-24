@@ -9,9 +9,9 @@ const RouteGuard=({allowedRoles}:{allowedRoles?:string[]})=>{
   if(isLoading)
     <Loader/>
   if(!data || isError)
-    <Navigate to={"signin"}/>  
+    <Navigate to={"signin"} replace/>  
   if(allowedRoles && !allowedRoles.includes(data.role)){
-    <Navigate to={"unauthorized"}/>
+    <Navigate to={"unauthorized"} replace/>
   }
   return <Outlet/>
 }

@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import RouteGuard from "./RouteGuard";
+import Layout from "../components/generic_components/Layout/Layout";
+import RoleRouter from "./RoleRouter";
 
 export const routes=createBrowserRouter([
   {
@@ -25,7 +27,7 @@ export const routes=createBrowserRouter([
             element:<RoleRouter/>
           },
           {
-            
+            path:"portal/patient/:id",
           }
         ]
       }
