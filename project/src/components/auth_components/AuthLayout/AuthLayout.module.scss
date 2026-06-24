@@ -34,12 +34,13 @@
 .formContainer{
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   border-radius: 2rem;
   background-color: $background-primary;
   box-shadow: $shadow-soft;
   padding: 1rem 1.5rem;
   h2{
-    text-align: center;
+    text-align:center;
     font-weight:bolder;
     color: $primary-active;
     font-family: $font-family-primary;

@@ -1,11 +1,11 @@
 import './App.css'
-import AuthLayout from './components/auth_components/AuthLayout/AuthLayout'
+import Login from './pages/Login/Login'
 
 function App() {
 
   return (
     <>
-      <AuthLayout></AuthLayout>
+      <Login/>
     </>
   )
 }
