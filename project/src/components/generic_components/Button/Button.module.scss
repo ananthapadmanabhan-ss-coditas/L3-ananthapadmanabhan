@@ -1,0 +1,23 @@
+@use "../../../styles/shadow" as *;
+@use "../../../styles/variables" as *;
+
+.button {
+  background-color: var(--background-color, $button-primary);
+  color: var(--color, $text-light);
+  border-radius: 0.5rem;
+  box-shadow: $shadow-soft;
+  padding: 0.25rem 1.25rem;
+  border: thin solid;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+  &:hover {
+    box-shadow: $shadow-hover;
+    background-color: var(--color, $primary-active);
+    color: var(--background-color, $text-light);
+  }
+  &:disabled {
+    cursor: not-allowed;
+    background-color: $button-disabled;
+    color: $button-disabled-text;
+  }
+}
