@@ -1,0 +1,10 @@
+@use "../../../styles/variables" as *;
+
+.layout{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  background-color: $background-primary;
+  overflow: hidden;
+  max-width: 100vw;
+  height: calc(100vh - 85px);
+}
