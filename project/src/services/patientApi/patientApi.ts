@@ -1,5 +1,5 @@
 import { baseApi } from "../baseAPI";
-import type { AppointmentRequest } from "./patientApiTypes";
+import type { AppointmentRequest, reScheduleRequest } from "./patientApiTypes";
 
 export const patientApi=baseApi.injectEndpoints({
   endpoints: (builder) => ({
@@ -24,7 +24,22 @@ export const patientApi=baseApi.injectEndpoints({
         method:"GET",
       })
     }),
+    rescheduleAppointment:builder.mutation<any,reScheduleRequest>({
+      query:({scheduledFor,id}) => ({
+        url:`appointments/${id}/reschedule`,
+        method:"POST",
+        body:{scheduledFor}
+      }),
+      invalidatesTags:["Appointment"]
+    }),
+    cancelAppointment:builder.mutation<any,string>({
+      query:(id) => ({
+        url:`appointments/${id}/cancel`,
+        method:"POST",
+      }),
+      invalidatesTags:["Appointment"]
+    }),
   })
 })
 
-export const {useBookAppointmentMutation,useGetAllAppointmentsQuery,useViewAppointmentQuery}=patientApi
+export const {useBookAppointmentMutation,useGetAllAppointmentsQuery,useViewAppointmentQuery,useRescheduleAppointmentMutation,useCancelAppointmentMutation}=patientApi

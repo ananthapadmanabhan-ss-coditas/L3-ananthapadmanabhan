@@ -1,5 +1,5 @@
 @use '../../../styles/variables' as *;
-
+@use "../../../styles/shadow" as *;
 .modal{
   min-height: 100vh;
   min-width: 100vw;
@@ -19,6 +19,8 @@
   padding: 1rem 1.5rem;
   min-height: 50%;
   justify-content: space-evenly;
+  border-radius: 8px;
+  box-shadow: $shadow-hard;
   h2{
     text-align: center;
   }

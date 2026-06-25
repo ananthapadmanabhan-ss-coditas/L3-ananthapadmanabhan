@@ -3,3 +3,8 @@ export interface AppointmentRequest{
   reason:string,
   clinicianId:string
 }
+
+export interface reScheduleRequest{
+  id:string
+  scheduledFor:string
+}
