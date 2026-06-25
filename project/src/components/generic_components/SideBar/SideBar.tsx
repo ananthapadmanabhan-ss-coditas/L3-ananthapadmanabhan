@@ -8,8 +8,8 @@ const SideBar=({id,options}:SideBarProps)=>{
   return(
     <div className={styles.sidebar}>
       {
-        options.map((option)=>
-          <Button onClick={()=>navigate(`${option.toLowerCase().replace(/\s/g, '')}`)} className={styles.sideBarBtns}>{option}</Button>
+        options.map((option,i)=>
+          <Button key={i} onClick={()=>navigate(`${option.toLowerCase().replace(/\s/g, '')}`)} className={styles.sideBarBtns}>{option}</Button>
         )
       }
     </div>

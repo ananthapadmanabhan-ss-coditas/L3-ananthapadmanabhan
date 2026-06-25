@@ -7,6 +7,7 @@ import RoleRouter from "./RoleRouter";
 import PatientLayout from "../components/patient_components/PatientLayout/PatientLayout";
 import PatientDashboard from "../pages/PatientDashboard/PatientDashboard";
 import BookAppointment from "../components/patient_components/BookAppointment/BookAppointment";
+import ViewAppointment from "../components/patient_components/ViewAppointment/ViewAppointment";
 
 
 export const routes=createBrowserRouter([
@@ -43,6 +44,11 @@ export const routes=createBrowserRouter([
                 path:"bookappointment",
                 element:<BookAppointment/>
               },
+              {
+                path:"appointment/:appointmentID",
+                element:<ViewAppointment/>
+              },
+
               {
                 path:"visitsummaries",
                 element:<BookAppointment/>

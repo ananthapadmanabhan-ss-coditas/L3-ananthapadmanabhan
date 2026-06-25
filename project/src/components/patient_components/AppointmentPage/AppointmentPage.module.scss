@@ -1,0 +1,24 @@
+@use "../../../styles//variables" as *;
+
+.AppointmentPage{
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  justify-content: space-evenly;
+  background-color: aliceblue;
+  padding: 0.5rem;
+  gap: 0.5rem;
+}
+
+.Doctor{
+  display: flex;
+  justify-content: space-between;
+}
+
+.Others{
+  display: block;
+  gap: 1rem;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+}

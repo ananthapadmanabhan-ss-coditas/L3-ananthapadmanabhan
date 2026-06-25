@@ -1,9 +1,9 @@
 import type { CardProps } from "./Card.types"
 import styles from './Card.module.scss'
 
-const Card=({children}:CardProps)=>{
+const Card=({children,onClick}:CardProps)=>{
   return(
-    <div className={styles.Card}>
+    <div className={styles.Card} onClick={onClick}>
       {children}
     </div>
   );

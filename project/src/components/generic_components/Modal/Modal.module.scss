@@ -22,4 +22,12 @@
   h2{
     text-align: center;
   }
+  position: relative;
+}
+.floating{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.25rem;
+  border-radius: 0px;
 }

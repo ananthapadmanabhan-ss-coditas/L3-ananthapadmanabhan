@@ -1,7 +1,7 @@
 
 import Loader from "../../components/generic_components/Loader/Loader";
 import Message from "../../components/generic_components/Message/Message";
-
+import empty from "../../assets/images.png"
 import { useGetAllAppointmentsQuery } from "../../services/patientApi/patientApi";
 import styles from "./PatientDashboard.module.scss"
 
@@ -14,7 +14,7 @@ const PatientDashboard=()=>{
   const [select,setSelect]=useState("BOOKED")
 
   const {data:Appointments,isLoading,isError}=useGetAllAppointmentsQuery(select)
-
+  console.log(Appointments)
   return(
     <div className={styles.PatientDashboard}>
       <div className={styles.buttonDivs}>
@@ -28,8 +28,9 @@ const PatientDashboard=()=>{
           { isLoading && <Loader/>}
           { isError && <Message type="Error" message="Error fetching data pleasae try again after some time"/>}
           { 
-          Appointments?.length===0 
-            ? <Message type="Error" message="NOTHING TO SHOW HERE"/>
+          Appointments &&
+          Appointments.length===0
+            ? <div className={styles.emptyImage}><img src={empty}/></div>
             : <AppointmentPage data={Appointments}/>
           }
     </div>

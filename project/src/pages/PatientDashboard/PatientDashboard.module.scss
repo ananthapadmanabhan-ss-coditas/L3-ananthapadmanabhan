@@ -8,3 +8,14 @@
   justify-content: space-evenly;
   padding: 0.5rem;
 }
+
+.emptyImage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img{
+    height: 100%;
+    width: 100%;
+    max-width: 600px;
+  }
+}

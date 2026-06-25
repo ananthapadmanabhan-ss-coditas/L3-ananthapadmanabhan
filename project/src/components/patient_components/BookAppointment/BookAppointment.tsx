@@ -92,7 +92,7 @@ const BookAppointment = () => {
                 })}
               >
                 {Doctors?.map((Doctor: ClinicianResponse) => (
-                  <Select.Option id={Doctor.id} value={`${Doctor.id}`}>
+                  <Select.Option key={Doctor.id} id={Doctor.id} value={`${Doctor.id}`}>
                     {Doctor.name}
                   </Select.Option>
                 ))}
