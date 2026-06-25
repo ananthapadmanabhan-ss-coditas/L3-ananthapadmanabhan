@@ -7,11 +7,13 @@ const RouteGuard=({allowedRoles}:{allowedRoles?:string[]})=>{
   console.log("here")
   const {data,isLoading,isError}=useGetUserQuery();
   if(isLoading)
-    <Loader/>
+    return <Loader/>
+  console.log("load aayi")
   if(!data || isError)
-    <Navigate to={"signin"} replace/>  
+    return <Navigate to={"signin"} replace/>  
+  console.log("error")
   if(allowedRoles && !allowedRoles.includes(data.role)){
-    <Navigate to={"unauthorized"} replace/>
+    return <Navigate to={"unauthorized"} replace/>
   }
   return <Outlet/>
 }

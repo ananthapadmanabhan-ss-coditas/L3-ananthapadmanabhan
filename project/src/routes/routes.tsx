@@ -4,6 +4,7 @@ import Register from "../pages/Register/Register";
 import RouteGuard from "./RouteGuard";
 import Layout from "../components/generic_components/Layout/Layout";
 import RoleRouter from "./RoleRouter";
+import PatientLayout from "../components/patient_components/PatientLayout/PatientLayout";
 
 export const routes=createBrowserRouter([
   {
@@ -28,6 +29,13 @@ export const routes=createBrowserRouter([
           },
           {
             path:"portal/patient/:id",
+            element:<PatientLayout/>,
+            children:[
+              {
+                index:true,
+                element:<PatientDashboard/>
+              }
+            ]
           }
         ]
       }
