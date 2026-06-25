@@ -18,3 +18,9 @@ export interface RegisterResponse{
   accessToken:string
   refreshToken:string
 }
+
+export interface ClinicianResponse{
+  id: string,
+  name: string,
+  specialty: string
+}

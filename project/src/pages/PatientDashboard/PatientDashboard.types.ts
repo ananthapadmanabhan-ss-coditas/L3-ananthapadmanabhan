@@ -1,0 +1,5 @@
+type APPOINTMENT="IN_VISIT"|"BOOKED"|"CHECKED_IN"|"CALLED"|"COMPLETED"|"CANCELLED"
+
+export interface AppointmentType{
+  type:APPOINTMENT
+}

@@ -1,3 +1,10 @@
 .PatientDashboard{
   position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+.buttonDivs{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.5rem;
 }
