@@ -7,6 +7,7 @@ import styles from "./PatientDashboard.module.scss"
 
 import { useState } from "react";
 import Button from "../../components/generic_components/Button/Button";
+import AppointmentPage from "../../components/patient_components/AppointmentPage/AppointmentPage";
 
 const PatientDashboard=()=>{
 
@@ -29,7 +30,7 @@ const PatientDashboard=()=>{
           { 
           Appointments?.length===0 
             ? <Message type="Error" message="NOTHING TO SHOW HERE"/>
-            : <div className={styles.dataDiv}></div>
+            : <AppointmentPage data={Appointments}/>
           }
     </div>
   );

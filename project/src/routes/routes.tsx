@@ -6,7 +6,8 @@ import Layout from "../components/generic_components/Layout/Layout";
 import RoleRouter from "./RoleRouter";
 import PatientLayout from "../components/patient_components/PatientLayout/PatientLayout";
 import PatientDashboard from "../pages/PatientDashboard/PatientDashboard";
-import BookAppointment from "../components/patient_components/PatientLayout/BookAppointment/BookAppointment";
+import BookAppointment from "../components/patient_components/BookAppointment/BookAppointment";
+
 
 export const routes=createBrowserRouter([
   {
