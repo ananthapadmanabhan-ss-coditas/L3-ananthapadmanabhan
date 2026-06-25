@@ -5,6 +5,12 @@ import RouteGuard from "./RouteGuard";
 import Layout from "../components/generic_components/Layout/Layout";
 import RoleRouter from "./RoleRouter";
 import PatientLayout from "../components/patient_components/PatientLayout/PatientLayout";
+import PatientDashboard from "../pages/PatientDashboard/PatientDashboard";
+import BookAppointment from "../components/patient_components/BookAppointment/BookAppointment";
+import ViewAppointment from "../components/patient_components/RescheduleAppointment/RescheduleAppointment";
+import RescheduleAppointment from "../components/patient_components/RescheduleAppointment/RescheduleAppointment";
+import CancelAppointment from "../components/patient_components/CancelAppointment/CancelAppointment";
+
 
 export const routes=createBrowserRouter([
   {
@@ -30,10 +36,35 @@ export const routes=createBrowserRouter([
           {
             path:"portal/patient/:id",
             element:<PatientLayout/>,
-            children:[
+            children:
+            [
               {
                 index:true,
                 element:<PatientDashboard/>
+              },
+              {
+                path:"bookappointment",
+                element:<BookAppointment/>
+              },
+              {
+                path:"reschedule/:appointmentID",
+                element:<RescheduleAppointment/>
+              },
+              {
+                path:"cancel/:appointmentID",
+                element:<CancelAppointment/>
+              },
+              {
+                path:"visitsummaries",
+                element:<BookAppointment/>
+              },
+              {
+                path:"queue",
+                element:<BookAppointment/>
+              },
+              {
+                path:"assistant",
+                element:<BookAppointment/>
               }
             ]
           }

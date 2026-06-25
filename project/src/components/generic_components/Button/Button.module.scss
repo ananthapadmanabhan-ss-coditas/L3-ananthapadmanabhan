@@ -23,7 +23,12 @@
 }
 
 .Primary{
-  
+  color: $warning-color;
+  background-color: $warning-bg;
+  &:hover{
+    background-color:$warning-color;
+    color: $warning-bg;
+  }
 }
 
 .Secondary{

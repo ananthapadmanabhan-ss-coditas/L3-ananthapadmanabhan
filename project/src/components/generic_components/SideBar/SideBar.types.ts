@@ -1,3 +1,4 @@
 export interface SideBarProps{
-  options?:string[]
+  id:string
+  options:string[]
 }

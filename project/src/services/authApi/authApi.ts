@@ -1,5 +1,6 @@
 import { baseApi } from "../baseAPI";
 import type {
+  ClinicianResponse,
   LoginRequest,
   LoginResponse,
   RegisterRequest,
@@ -36,8 +37,15 @@ export const authApi = baseApi.injectEndpoints({
           body
         }
       )
-    })
-  }),
-});
+    }),
+    getClinicians: builder.query<ClinicianResponse[],void>({
+      query:()=>(
+        {
+          url:"clinicians",
+          method:"GET",
+        }
+      )
+    }),
+})});
 
-export const { useLoginUserMutation, useRegisterUserMutation,useGetUserQuery,useLogoutUserMutation } = authApi;
+export const { useLoginUserMutation, useRegisterUserMutation,useGetUserQuery,useLogoutUserMutation,useGetCliniciansQuery } = authApi;

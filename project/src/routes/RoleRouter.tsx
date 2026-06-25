@@ -10,11 +10,11 @@ const RoleRouter=()=>{
   if(!data)
     return <Navigate to={"signin"} replace/>
   if(data.role==="PATIENT")
-    return <Navigate to={`portal/patient/:${data.id}`}/>
+    return <Navigate to={`portal/patient/${data.id}`}/>
   if(data.role==="CLINICIAN")
-    return <Navigate to={`portal/patient/:${data.id}`}/>
+    return <Navigate to={`portal/patient/${data.id}`}/>
   if(data.role==="COORDINATOR")
-    return <Navigate to={`portal/patient/:${data.id}`}/>
+    return <Navigate to={`portal/patient/${data.id}`}/>
 }
 
 export default RoleRouter
