@@ -1,11 +1,10 @@
 @use ".././../../styles/variables" as *;
 
-.overflow{
-  position: relative;
-  overflow: hidden;
-}
+// .overflow{
+//   position: relative;
+//   overflow: hidden;
+// }
 .sidebar{
-  height: 65%; //have to find better alternative
   padding: 1rem 1.25rem;
   background-color: $selected-bg;
   display: flex;

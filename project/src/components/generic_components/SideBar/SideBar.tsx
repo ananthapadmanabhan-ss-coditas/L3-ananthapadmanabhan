@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 const SideBar = ({ id, options }: SideBarProps) => {
   const navigate = useNavigate();
   return (
-    <div className={styles.overflow}>
       <div className={styles.sidebar}>
       {options.map((option, i) =>
         option === "View Appointments" ? (
@@ -31,7 +30,6 @@ const SideBar = ({ id, options }: SideBarProps) => {
           </Button>
         ),
       )}
-    </div>
     </div>
   );
 };

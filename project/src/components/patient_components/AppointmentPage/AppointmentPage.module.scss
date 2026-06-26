@@ -4,9 +4,6 @@
   display: flex;
   flex-wrap: wrap;
   overflow-y: hidden;
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  grid-template-rows: repeat(3,1fr);
   justify-content: space-evenly;
   background-color: aliceblue;
   padding: 0.5rem;
