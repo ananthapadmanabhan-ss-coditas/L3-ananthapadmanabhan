@@ -19,11 +19,11 @@ const PatientDashboard=()=>{
     <div className={styles.PatientDashboard}>
       <div className={styles.buttonDivs}>
         <Button variant="Fourth" onClick={()=>setSelect("BOOKED")}>BOOKED</Button>
-        <Button onClick={()=>setSelect("CHECKED_IN")}>CHECKED IN</Button>
-        <Button onClick={()=>setSelect("CALLED")}>CALLED</Button>
-        <Button onClick={()=>setSelect("COMPLETED")}>COMPLETED</Button>
-        <Button onClick={()=>setSelect("IN_VISIT")}>IN VISIT</Button>
-        <Button onClick={()=>setSelect("CANCELLED")}>CANCELLED</Button>
+        <Button variant="Fourth" onClick={()=>setSelect("CHECKED_IN")}>CHECKED IN</Button>
+        <Button variant="Fourth" onClick={()=>setSelect("CALLED")}>CALLED</Button>
+        <Button variant="Fourth" onClick={()=>setSelect("COMPLETED")}>COMPLETED</Button>
+        <Button variant="Fourth" onClick={()=>setSelect("IN_VISIT")}>IN VISIT</Button>
+        <Button variant="Fourth" onClick={()=>setSelect("CANCELLED")}>CANCELLED</Button>
       </div>     
           { isLoading && <Loader/>}
           { isError && <Message type="Error" message="Error fetching data pleasae try again after some time"/>}

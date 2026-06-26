@@ -36,7 +36,7 @@ const IntakeAppointment = () => {
       const answer = { answers: data!, id: appointmentID! };
       console.log(answer);
       await submitIntake(answer);
-      navigate(`portal/patient/${id}`);
+      // navigate(`portal/patient/${id}`);
     } catch (error) {
       console.log(error);
     }
@@ -57,64 +57,79 @@ const IntakeAppointment = () => {
   // };
 
   return (
-    <Modal formTitle="INTAKE DETAILS">
-      <form className={styles.form} onSubmit={handleSubmit(onIntakeFormSubmit)}>
-        <h4>Personal Details</h4>
-        <Input
-          label="Answer 1"
-          placeholder="Answer 1"
-          {...register("additionalProp1", {
-            required: "Field Cannot be empty",
-          })}
-          disabled={submitIntakeState.isSuccess}
-        />
-        {errors.additionalProp1 && (
-          <Message type="Error" message={errors.additionalProp1.message} />
-        )}
-
-        <Input
-          label="Answer 2"
-          placeholder="Answer 2"
-          {...register("additionalProp2", {
-            required: "Field Cannot be empty",
-          })}
-          disabled={submitIntakeState.isSuccess}
-        />
-        {errors.additionalProp2 && (
-          <Message type="Error" message={errors.additionalProp2.message} />
-        )}
-
-        <TextArea
-          rows={4}
-          label="Answer 3"
-          placeholder="Answer 3"
-          {...register("additionalProp3", {
-            required: "Field Cannot be empty",
-          })}
-          disabled={submitIntakeState.isSuccess}
-        />
-        {errors.additionalProp3 && (
-          <Message type="Error" message={errors.additionalProp3.message} />
-        )}
-
-        <div>
+    <div>
+      {submitIntakeState.isSuccess ? (
+        <div className={styles.SUCCESSFUL}>
+          <h1>INTAKE SUCCESSFUL</h1>
           <Button
-            type="submit"
-            disabled={
-              submitIntakeState.isLoading || submitIntakeState.isSuccess
-            }
+            variant="Primary"
+            onClick={() => navigate(`/`)}
           >
-            {submitIntakeState.isLoading ? "LOADING..." : "Submit"}
+            GO BACK TO DASHBOARD
           </Button>
         </div>
+      ) : (
+        <Modal formTitle="INTAKE DETAILS">
+          <form
+            className={styles.form}
+            onSubmit={handleSubmit(onIntakeFormSubmit)}
+          >
+            <h4>Personal Details</h4>
+            <Input
+              label="Answer 1"
+              placeholder="Answer 1"
+              {...register("additionalProp1", {
+                required: "Field Cannot be empty",
+              })}
+              disabled={submitIntakeState.isSuccess}
+            />
+            {errors.additionalProp1 && (
+              <Message type="Error" message={errors.additionalProp1.message} />
+            )}
 
-        <div>
-          {submitIntakeState.isError && (
-            <Message type="Error" message="Request Failed" />
-          )}
-        </div>
-      </form>
-        {/* <h4>Uploads</h4>
+            <Input
+              label="Answer 2"
+              placeholder="Answer 2"
+              {...register("additionalProp2", {
+                required: "Field Cannot be empty",
+              })}
+              disabled={submitIntakeState.isSuccess}
+            />
+            {errors.additionalProp2 && (
+              <Message type="Error" message={errors.additionalProp2.message} />
+            )}
+
+            <TextArea
+              rows={4}
+              label="Answer 3"
+              placeholder="Answer 3"
+              {...register("additionalProp3", {
+                required: "Field Cannot be empty",
+              })}
+              disabled={submitIntakeState.isSuccess}
+            />
+            {errors.additionalProp3 && (
+              <Message type="Error" message={errors.additionalProp3.message} />
+            )}
+
+            <div>
+              <Button
+                type="submit"
+                disabled={
+                  submitIntakeState.isLoading || submitIntakeState.isSuccess
+                }
+              >
+                {submitIntakeState.isLoading ? "LOADING..." : "Submit"}
+              </Button>
+            </div>
+
+            <div>
+              {submitIntakeState.isError && (
+                <Message type="Error" message="Request Failed" />
+              )}
+            </div>
+          </form>
+          {/* <h4>Uploads</h4>
         <form
           onSubmit={handleUpload(onUploadsSubmit)}
           className={styles.uploadFormStyle}
@@ -141,8 +156,10 @@ const IntakeAppointment = () => {
           {uploadError.file && (
             <Message type="Error" message={uploadError.file.message} />
           )} */}
-        {/* </form> */}
-    </Modal>
+          {/* </form> */}
+        </Modal>
+      )}
+    </div>
   );
 };
 

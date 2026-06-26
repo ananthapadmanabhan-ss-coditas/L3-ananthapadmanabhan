@@ -63,6 +63,7 @@ const AppointmentPage = ({ data }: APprops) => {
           <div>
             {appointment.intake ? 
               ButtonFinder(appointment.status,appointment.id) : (
+                appointment.status==="CANCELLED" ? <></> :
               <Button variant="Tertiary" onClick={()=>navigate(`intake/${appointment.id}`)}>INTAKE</Button>
             )}
           </div>
