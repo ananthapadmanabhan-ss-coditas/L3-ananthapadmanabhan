@@ -2,16 +2,23 @@ import { Navigate, Outlet } from "react-router-dom";
 import Loader from "../components/generic_components/Loader/Loader";
 import { useGetUserQuery } from "../services/authApi/authApi"
 
+// export enum ROLE{
+//   PATIENT="PATIENT",  
+//   CLINICIAN="CLINICIAN",
+//   COORDINATOR="COORDINATOR"
+// }
 
-const RouteGuard=({allowedRoles}:{allowedRoles?:string[]})=>{
-  console.log("here")
+type ROLE="PATIENT"|"CLINICIAN"|"COORDINATOR"
+
+const RouteGuard=({allowedRoles}:{allowedRoles?:ROLE[]})=>{
+  
   const {data,isLoading,isError}=useGetUserQuery();
   if(isLoading)
     return <Loader/>
-  console.log("load aayi")
+ 
   if(!data || isError)
     return <Navigate to={"signin"} replace/>  
-  console.log("error")
+
   if(allowedRoles && !allowedRoles.includes(data.role)){
     return <Navigate to={"unauthorized"} replace/>
   }

@@ -12,69 +12,71 @@ import CancelAppointment from "../components/patient_components/CancelAppointmen
 import IntakeAppointment from "../components/patient_components/IntakeAppointment/IntakeAppointment";
 import UnderDevelopment from "../components/patient_components/UnderDevelopment/UnderDevelopment";
 
-
-export const routes=createBrowserRouter([
+export const routes = createBrowserRouter([
   {
-    path:"/signin",
-    element:<Login/>
+    path: "/signin",
+    element: <Login />,
   },
   {
-    path:"/signup",
-    element:<Register/>
+    path: "/signup",
+    element: <Register />,
   },
   {
-    element:<RouteGuard/>,
-    children:[
+    element: <RouteGuard />,
+    children: [
       {
-        path:"/",
-        element:<Layout/>,
-        children:
-        [
+        path: "/",
+        element: <Layout />,
+        children: [
           {
-            index:true,
-            element:<RoleRouter/>
+            index: true,
+            element: <RoleRouter />,
           },
           {
-            path:"portal/patient/:id",
-            element:<PatientLayout/>,
-            children:
-            [
-              {
-                index:true,
-                element:<PatientDashboard/>
+            element: <RouteGuard allowedRoles={["PATIENT"]}/>,
+            children: [
+              { 
+                path: "portal/patient/:id",
+                element: <PatientLayout />,
+                children: [
+                  {
+                    index: true,
+                    element: <PatientDashboard />,
+                  },
+                  {
+                    path: "bookappointment",
+                    element: <BookAppointment />,
+                  },
+                  {
+                    path: "reschedule/:appointmentID",
+                    element: <RescheduleAppointment />,
+                  },
+                  {
+                    path: "cancel/:appointmentID",
+                    element: <CancelAppointment />,
+                  },
+                  {
+                    path: "visitsummaries",
+                    element: <UnderDevelopment />,
+                  },
+                  {
+                    path: "queue",
+                    element: <UnderDevelopment />,
+                  },
+                  {
+                    path: "intake/:appointmentID",
+                    element: <IntakeAppointment />,
+                  },
+                  {
+                    path: "assistant",
+                    element: <UnderDevelopment />,
+                  },
+                ],
               },
-              {
-                path:"bookappointment",
-                element:<BookAppointment/>
-              },
-              {
-                path:"reschedule/:appointmentID",
-                element:<RescheduleAppointment/>
-              },
-              {
-                path:"cancel/:appointmentID",
-                element:<CancelAppointment/>
-              },
-              {
-                path:"visitsummaries",
-                element:<UnderDevelopment/>
-              },
-              {
-                path:"queue",
-                element:<UnderDevelopment/>
-              },
-              {
-                path:"intake/:appointmentID",
-                element:<IntakeAppointment/>
-              },
-              {
-                path:"assistant",
-                element:<UnderDevelopment/>
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
-])
+            ],
+          },
+        ],
+      },
+    ],
+  },
+]);

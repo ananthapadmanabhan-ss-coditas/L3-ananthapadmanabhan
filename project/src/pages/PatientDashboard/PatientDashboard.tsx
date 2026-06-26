@@ -30,7 +30,7 @@ const PatientDashboard=()=>{
           { 
           Appointments &&
           Appointments.length===0
-            ? <div className={styles.emptyImage}><img src={empty}/></div>
+            ? <div className={styles.emptyImage}><img src={empty} alt="OOPS"/></div>
             : <AppointmentPage data={Appointments}/>
           }
     </div>

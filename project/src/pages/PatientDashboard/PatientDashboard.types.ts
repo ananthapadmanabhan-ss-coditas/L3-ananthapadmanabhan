@@ -3,3 +3,4 @@ type APPOINTMENT="IN_VISIT"|"BOOKED"|"CHECKED_IN"|"CALLED"|"COMPLETED"|"CANCELLE
 export interface AppointmentType{
   type:APPOINTMENT
 }
+

@@ -7,7 +7,7 @@ export interface Patient{
 export interface state{
   clinician:ClinicianResponse
   id:string
-  intake:any
+  intake:unknown
   reason:string
   scheduledFor:string
   status:string
