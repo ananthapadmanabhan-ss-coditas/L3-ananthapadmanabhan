@@ -10,6 +10,7 @@ export interface state{
   intake:any
   reason:string
   scheduledFor:string
+  status:string
 }
 
 export interface APprops{

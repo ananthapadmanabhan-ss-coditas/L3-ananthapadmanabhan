@@ -18,7 +18,7 @@ const PatientDashboard=()=>{
   return(
     <div className={styles.PatientDashboard}>
       <div className={styles.buttonDivs}>
-        <Button onClick={()=>setSelect("BOOKED")}>BOOKED</Button>
+        <Button variant="Fourth" onClick={()=>setSelect("BOOKED")}>BOOKED</Button>
         <Button onClick={()=>setSelect("CHECKED_IN")}>CHECKED IN</Button>
         <Button onClick={()=>setSelect("CALLED")}>CALLED</Button>
         <Button onClick={()=>setSelect("COMPLETED")}>COMPLETED</Button>

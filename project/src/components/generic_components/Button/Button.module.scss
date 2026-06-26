@@ -2,8 +2,8 @@
 @use "../../../styles/variables" as *;
 
 .button {
-  background-color: var(--background-color, $button-primary);
-  color: var(--color, $text-light);
+  background-color: var(--background-color, $info-bg);
+  color: var(--color, $accent-color);
   border-radius: 0.5rem;
   box-shadow: $shadow-soft;
   padding: 0.25rem 1.25rem;
@@ -12,8 +12,8 @@
   transition: box-shadow 0.2s ease;
   &:hover {
     box-shadow: $shadow-hover;
-    background-color: var(--color, $primary-active);
-    color: var(--background-color, $text-light);
+    background-color: var(--color, $accent-color);
+    color: var(--background-color,  $info-bg);
   }
   &:disabled {
     cursor: not-allowed;
@@ -46,5 +46,14 @@
   &:hover{
     background-color: $success-color;
     color: $success-bg;
+  }
+}
+
+.Fourth{
+  color:$info-color;
+  background-color: $info-bg;
+  &:hover{
+    background-color: $info-color;
+    color: $info-bg;
   }
 }

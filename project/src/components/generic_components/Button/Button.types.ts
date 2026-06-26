@@ -1,6 +1,6 @@
 import type { ButtonHTMLAttributes } from "react";
 
-type Variant = "Primary" | "Secondary" | "Tertiary"
+type Variant = "Primary" | "Secondary" | "Tertiary" | "Fourth"
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: Variant
