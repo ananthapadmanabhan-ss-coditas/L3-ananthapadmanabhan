@@ -1,6 +1,11 @@
 @use ".././../../styles/variables" as *;
 
+.overflow{
+  position: relative;
+  overflow: hidden;
+}
 .sidebar{
+  height: 65%; //have to find better alternative
   padding: 1rem 1.25rem;
   background-color: $selected-bg;
   display: flex;
@@ -11,6 +16,6 @@
 }
 
 .sideBarBtns{
-  padding: 1.5rem 1.75rem;
-  font-size:medium
+  padding: 1rem 1.5rem;
+  font-size:small
 }

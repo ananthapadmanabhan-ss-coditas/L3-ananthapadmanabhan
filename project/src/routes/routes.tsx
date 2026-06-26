@@ -7,9 +7,10 @@ import RoleRouter from "./RoleRouter";
 import PatientLayout from "../components/patient_components/PatientLayout/PatientLayout";
 import PatientDashboard from "../pages/PatientDashboard/PatientDashboard";
 import BookAppointment from "../components/patient_components/BookAppointment/BookAppointment";
-import ViewAppointment from "../components/patient_components/RescheduleAppointment/RescheduleAppointment";
 import RescheduleAppointment from "../components/patient_components/RescheduleAppointment/RescheduleAppointment";
 import CancelAppointment from "../components/patient_components/CancelAppointment/CancelAppointment";
+import IntakeAppointment from "../components/patient_components/IntakeAppointment/IntakeAppointment";
+import UnderDevelopment from "../components/patient_components/UnderDevelopment/UnderDevelopment";
 
 
 export const routes=createBrowserRouter([
@@ -56,15 +57,19 @@ export const routes=createBrowserRouter([
               },
               {
                 path:"visitsummaries",
-                element:<BookAppointment/>
+                element:<UnderDevelopment/>
               },
               {
                 path:"queue",
-                element:<BookAppointment/>
+                element:<UnderDevelopment/>
+              },
+              {
+                path:"intake/:appointmentID",
+                element:<IntakeAppointment/>
               },
               {
                 path:"assistant",
-                element:<BookAppointment/>
+                element:<UnderDevelopment/>
               }
             ]
           }

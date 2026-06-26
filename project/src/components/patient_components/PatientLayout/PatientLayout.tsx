@@ -6,7 +6,7 @@ const PatientLayout=()=>{
   const {id}=useParams()
   return(
     <div className={styles.layout}>
-      <SideBar id={id ?? ""} options={["Book Appointment","Visit Summaries","Queue","Assistant"]}/>
+      <SideBar id={id ?? ""} options={["View Appointments","Book Appointment","Visit Summaries","Queue","Assistant"]}/>
       <Outlet/>
     </div>
   );
